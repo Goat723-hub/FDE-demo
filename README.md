@@ -2,7 +2,9 @@
 
 一张客户发来的询价单照片，进去；一份可下载的中文 PDF 报价单，出来。
 
-![首屏](screenshots/01-hero.png)
+![实际操作：上传 → 扫描 → 改字段 → 提交 → 报价单](screenshots/demo.gif)
+
+*真实操作录屏（18 秒）：点击上传、AI 扫描定位、人工修改交期、提交计价、总价滚动、下载 PDF。完整画质见 [demo.mp4](screenshots/demo.mp4)。*
 
 一个面向五金 / 机加工小工厂的落地演示：业务员收到微信里的询价单照片，原本要照着敲进 Excel、翻历史报价、手算材料费和加工费、再排版成报价单。这个 demo 把这段流程压缩成 **上传 → 识别 → 人工确认 → 报价单** 四步。
 
@@ -164,8 +166,9 @@ fde-demo1/
 ├── scripts/
 │   ├── generate_inquiry.py  生成样例询价单图片和字段坐标
 │   ├── test_backend.py      计价与 PDF 的确定性自测
-│   └── shoot.py             用 Playwright 跑完整流程并截图
-└── screenshots/
+│   ├── shoot.py             用 Playwright 跑完整流程并截图
+│   └── record.py            录操作过程，转成 README 用的 GIF / MP4
+└── screenshots/             流程截图、操作录屏、生成的报价单
 ```
 
 存储刻意收在 `storage.py` 一个文件里：现在读写 JSON，换成 SQLite 或 Postgres 时只需要改这一层，上层代码不用动。
