@@ -33,13 +33,13 @@ def main():
 
         page.wait_for_selector(".item-card:not(.skeleton)", timeout=120_000)
         page.wait_for_timeout(1600)
-        page.screenshot(path=OUT / "03-review.png", full_page=True)
+        page.screenshot(path=OUT / "03-review.png")
         print("shot 03 review")
 
         page.get_by_role("button", name="确认并计价 →").click()
         page.wait_for_selector(".result", timeout=120_000)
         page.wait_for_timeout(6000)
-        page.screenshot(path=OUT / "04-result.png", full_page=True)
+        page.screenshot(path=OUT / "04-result.png")
         print("shot 04 result")
 
         with page.expect_download() as info:

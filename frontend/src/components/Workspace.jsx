@@ -6,8 +6,8 @@ const FIELDS = [
   ['weight_kg', '单件重量 (kg)', 'number'],
   ['quantity', '数量', 'number'],
   ['unit', '单位'],
-  ['process', '工艺要求', 'text', true],
   ['delivery_days', '交期 (天)', 'number'],
+  ['process', '工艺要求', 'text', true],
 ]
 
 function DocPanel({ extraction, visibleItems, scanning }) {
@@ -147,18 +147,27 @@ export default function Workspace({
 
         {error && <p className="inline-error">{error}</p>}
 
-        <div className="actions">
-          <button className="btn ghost" onClick={onReset} type="button">
-            ← 重新识别
-          </button>
-          <button
-            className="btn primary"
-            onClick={onConfirm}
-            disabled={scanning || quoting || !ready}
-            type="button"
-          >
-            {quoting ? '正在计价…' : '确认并计价 →'}
-          </button>
+        <div className="submit-bar">
+          <div className="submit-copy">
+            <span className="submit-label">提交报价</span>
+            <span className="submit-hint">
+              确认后由后端计价，并生成可下载的 PDF 报价单
+            </span>
+          </div>
+
+          <div className="actions">
+            <button className="btn ghost" onClick={onReset} type="button">
+              ← 重新识别
+            </button>
+            <button
+              className="btn primary"
+              onClick={onConfirm}
+              disabled={scanning || quoting || !ready}
+              type="button"
+            >
+              {quoting ? '正在计价…' : '确认并计价 →'}
+            </button>
+          </div>
         </div>
 
         <p className="fineprint">

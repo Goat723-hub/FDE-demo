@@ -37,6 +37,10 @@
 | --- | --- |
 | ![确认](screenshots/03-review.png) | ![结果](screenshots/04-result.png) |
 
+**在哪里提交：** 第 3 步右下角常驻的「提交报价」栏，点「确认并计价 →」才会进入报价。它固定在视口底部，不用滚到页面最下面找按钮。
+
+**输出在哪里：** 第 4 步右上角标着 `OUTPUT · 报价单已生成` 的区域，按钮下载的 PDF 由后端 fpdf2 生成；左边是逐行明细和总价，右边是模型组织的摘要。
+
 后端生成的 PDF：[screenshots/quotation.pdf](screenshots/quotation.pdf) · 预览图 [screenshots/05-pdf.png](screenshots/05-pdf.png)
 
 识别结果落到右侧卡片里，每个字段都可以直接改；改完再点「确认并计价」。左边单据上的高亮框是字段定位，用来让业务员一眼看到「AI 到底读到了什么」。

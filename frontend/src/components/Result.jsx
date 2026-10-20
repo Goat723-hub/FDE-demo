@@ -30,13 +30,17 @@ export default function Result({ quote, summary, order, onDownload, onReset }) {
           </p>
         </div>
 
-        <div className="result-actions">
-          <button className="btn primary" onClick={onDownload} type="button">
-            下载 PDF 报价单 <span className="btn-arrow">↓</span>
-          </button>
-          <button className="btn ghost" onClick={onReset} type="button">
-            重新演示
-          </button>
+        <div className="output-block">
+          <span className="output-label">OUTPUT · 报价单已生成</span>
+          <div className="result-actions">
+            <button className="btn primary" onClick={onDownload} type="button">
+              下载 PDF 报价单 <span className="btn-arrow">↓</span>
+            </button>
+            <button className="btn ghost" onClick={onReset} type="button">
+              重新演示
+            </button>
+          </div>
+          <span className="output-note">后端 fpdf2 生成 · A4 · 可直接发客户</span>
         </div>
       </div>
 

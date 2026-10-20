@@ -617,7 +617,7 @@ input {
 .item-card {
   background: var(--card);
   border: 1px solid var(--rule);
-  padding: 14px 20px 12px;
+  padding: 12px 18px 10px;
   box-shadow: var(--shadow-sm);
   animation: cardIn 0.4s ease both;
 }
@@ -637,9 +637,9 @@ input {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding-bottom: 12px;
+  padding-bottom: 9px;
   border-bottom: 1px solid var(--rule-soft);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .item-no {
@@ -671,7 +671,14 @@ input {
 .field-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4px 16px;
+  gap: 2px 16px;
+}
+
+/* 宽屏下每行四项、两张行放完一个零件，三个零件和提交栏能同屏 */
+@media (min-width: 1180px) {
+  .field-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .field {
@@ -684,6 +691,13 @@ input {
   grid-column: 1 / -1;
 }
 
+/* 放在 .field.wide 之后，才能真正覆盖上面那条铺满整行的规则 */
+@media (min-width: 1180px) {
+  .field.wide {
+    grid-column: span 2;
+  }
+}
+
 .field span {
   font-family: var(--mono);
   font-size: 9.5px;
@@ -694,7 +708,7 @@ input {
 
 .field input {
   width: 100%;
-  padding: 4px 2px 6px;
+  padding: 3px 2px 5px;
   border: 0;
   border-bottom: 1px solid var(--rule);
   background: transparent;
@@ -710,6 +724,18 @@ input {
 
 .field input:disabled {
   color: var(--muted);
+}
+
+/* 数字框的上下箭头在截图和演示里都很扎眼，去掉 */
+.field input[type="number"]::-webkit-outer-spin-button,
+.field input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.field input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 /* 骨架屏 */
@@ -757,11 +783,47 @@ input {
   }
 }
 
+/* 固定在视口底部的提交栏：不用滚到页面最下面也能提交 */
+
+.submit-bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 4px;
+  padding: 14px 0 14px;
+  background: var(--paper);
+  border-top: 2px solid var(--ink);
+  box-shadow: 0 -18px 24px -18px rgba(26, 26, 26, 0.45);
+}
+
+.submit-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.submit-label {
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+}
+
+.submit-hint {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
 .actions {
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 6px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .fineprint {
@@ -818,10 +880,32 @@ input {
   color: var(--muted);
 }
 
+.output-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  padding-bottom: 6px;
+}
+
+.output-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.output-note {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
 .result-actions {
   display: flex;
   gap: 10px;
-  padding-bottom: 6px;
 }
 
 .result-grid {
@@ -1039,6 +1123,10 @@ input {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .output-block {
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1078,6 +1166,16 @@ input {
   .field-grid,
   .sk-grid {
     grid-template-columns: 1fr;
+  }
+
+  .submit-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .actions {
+    justify-content: flex-end;
   }
 
   .footer {
