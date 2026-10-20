@@ -69,6 +69,15 @@ flowchart LR
 
 `GET /api/health` 会返回当前是 `live` 还是 `demo` 模式。
 
+一次真实运行（live 模式）的后端日志：
+
+```text
+[api] POST /api/extract -> 200 (1.56s)    # 模型看图 + JSON 校验
+[api] POST /api/quote   -> 200 (0.01s)    # 纯 Python，确定性
+[api] POST /api/summary -> 200 (1.08s)    # 模型组织措辞
+[api] POST /api/pdf     -> 200 (1.60s)    # fpdf2 排版、内嵌中文字体
+```
+
 ---
 
 ## 计价规则

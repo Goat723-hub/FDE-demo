@@ -13,5 +13,8 @@ backend/data/quotes_log.json
 frontend/node_modules/
 frontend/dist/
 
+# 自测脚本生成的预览文件
+screenshots/quotation_preview.*
+
 .DS_Store
 Thumbs.db

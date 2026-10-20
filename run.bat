@@ -23,5 +23,6 @@ echo.
 echo   地址：http://127.0.0.1:8000
 echo   没有 .env 时自动进入演示模式，不调用模型。
 echo.
-start "" http://127.0.0.1:8000
+rem 等 3 秒再开浏览器，避免服务还没起来
+start "" cmd /c "timeout /t 3 >nul & start http://127.0.0.1:8000"
 ".venv\Scripts\python.exe" -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
