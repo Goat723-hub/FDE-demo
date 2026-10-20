@@ -1,0 +1,17 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# 密钥
+.env
+
+# 运行时产生的报价日志
+backend/data/quotes_log.json
+
+# 前端依赖与构建产物（run.bat / run.sh 会自动构建）
+frontend/node_modules/
+frontend/dist/
+
+.DS_Store
+Thumbs.db

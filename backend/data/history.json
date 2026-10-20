@@ -1,0 +1,46 @@
+[
+  {
+    "id": "Q-2026-0912-01",
+    "date": "2026-09-12",
+    "customer": "宏达精密机械有限公司",
+    "part_name": "不锈钢法兰盘",
+    "material": "304不锈钢",
+    "quantity": 100,
+    "weight_kg": 0.85,
+    "unit_price": 42.9,
+    "total": 4290.0
+  },
+  {
+    "id": "Q-2026-0830-01",
+    "date": "2026-08-30",
+    "customer": "宏达精密机械有限公司",
+    "part_name": "铝合金连接块",
+    "material": "6061-T6铝",
+    "quantity": 60,
+    "weight_kg": 0.32,
+    "unit_price": 45.8,
+    "total": 2748.0
+  },
+  {
+    "id": "Q-2026-0718-01",
+    "date": "2026-07-18",
+    "customer": "宏达精密机械有限公司",
+    "part_name": "碳钢支架",
+    "material": "Q235碳钢",
+    "quantity": 300,
+    "weight_kg": 1.2,
+    "unit_price": 27.5,
+    "total": 8250.0
+  },
+  {
+    "id": "Q-2026-0928-01",
+    "date": "2026-09-28",
+    "customer": "恒立自动化设备有限公司",
+    "part_name": "黄铜接头",
+    "material": "黄铜H62",
+    "quantity": 50,
+    "weight_kg": 0.18,
+    "unit_price": 61.2,
+    "total": 3060.0
+  }
+]

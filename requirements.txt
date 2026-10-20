@@ -1,0 +1,6 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+openai>=1.50
+fpdf2>=2.8
+python-dotenv>=1.0
+pillow>=10.0

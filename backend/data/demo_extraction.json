@@ -1,0 +1,37 @@
+{
+  "order": {
+    "customer": "宏达精密机械有限公司",
+    "inquiry_no": "HD-2026-1020",
+    "date": "2026-10-20",
+    "urgent": true
+  },
+  "items": [
+    {
+      "part_name": "不锈钢法兰盘",
+      "material": "304不锈钢",
+      "weight_kg": 0.85,
+      "quantity": 120,
+      "unit": "件",
+      "process": "CNC车削、去毛刺",
+      "delivery_days": 7
+    },
+    {
+      "part_name": "铝合金连接块",
+      "material": "6061-T6铝",
+      "weight_kg": 0.32,
+      "quantity": 80,
+      "unit": "件",
+      "process": "CNC铣削、阳极氧化",
+      "delivery_days": 10
+    },
+    {
+      "part_name": "碳钢支架",
+      "material": "Q235碳钢",
+      "weight_kg": 1.2,
+      "quantity": 200,
+      "unit": "件",
+      "process": "激光切割、折弯、镀锌",
+      "delivery_days": 12
+    }
+  ]
+}
